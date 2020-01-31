@@ -390,6 +390,10 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ## 武汉肺炎疫情新闻动态
 
+### 国家卫健委 - 疫情通报
+
+<Route author="Cielpy DIYgod" example="/coronavirus/nhc" path="/coronavirus/nhc"/>
+
 ### 财新网 - 武汉肺炎防疫全纪录
 
 <Route author="DIYgod" example="/coronavirus/caixin" path="/coronavirus/caixin"/>
@@ -398,13 +402,9 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route author="DIYgod" example="/coronavirus/dxy" path="/coronavirus/dxy"/>
 
-### 丁香园 - 全国新型肺炎疫情数据统计（全国）
+### 丁香园 - 全国新型肺炎疫情数据统计
 
-<Route author="DIYgod" example="/coronavirus/dxy/data" path="/coronavirus/dxy/data"/>
-
-### 丁香园 - 全国新型肺炎疫情数据统计（各省份）
-
-<Route author="DIYgod" example="/coronavirus/dxy/data/湖北" path="/coronavirus/dxy/data/:province" :paramsDesc="['省份名']"/>
+<Route author="DIYgod HenryQW" example="/coronavirus/dxy/data/湖北/武汉" path="/coronavirus/dxy/data/:province?/:city?" :paramsDesc="['省/直辖市名，缺省或错误则返回全国数据','城市名，缺省或错误则返回全省数据。直辖市请使用区/县名。']"/>
 
 ### South China Morning Post - China coronavirus outbreak
 
