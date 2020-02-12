@@ -207,6 +207,10 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 
 <Route author="SayaSS" example="/pcr/news" path="/pcr/news"/>
 
+### 台服公告
+
+<Route author="hoilc" example="/pcr/news-tw" path="/pcr/news-tw"/>
+
 ## 篝火营地
 
 ### 游戏资讯
@@ -276,6 +280,18 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 ### 游戏公告与新闻
 
 <Route author="Astrian" example="/arknights/news" path="/arknights/news"/>
+
+## 奶牛关
+
+### 元素文章
+
+<Route author="hoilc" example="/cowlevel/element/1370" path="/cowlevel/element/:id" :paramsDesc="['元素 ID, 可在 URL 中找到']" radar="1" />
+
+## 网易大神
+
+### 用户发帖
+
+<Route author="luyuhuang" example="/netease/ds/63dfbaf4117741daaf73404601165843" path="/netease/ds/:id" :paramsDesc="['用户ID']"/>
 
 ## 王者荣耀
 
@@ -349,7 +365,7 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 
 ### 游研社
 
-<Route author="LightStrawberry" example="/yystv/category/:category" path="/yystv/category/:category" :paramsDesc="['专栏类型']">
+<Route author="LightStrawberry" example="/yystv/category/recommend" path="/yystv/category/:category" :paramsDesc="['专栏类型']">
 
 | 推游      | 游戏史  | 大事件 | 文化    | 趣闻 | 经典回顾 |
 | --------- | ------- | ------ | ------- | ---- | -------- |

@@ -43,6 +43,12 @@ pageClass: routes
 
 <Route author="ntzyz" example="/dhl/12345678" path="/dhl/:shipment_id" :paramsDesc="['运单号']"/>
 
+## HackerOne
+
+### HackerOne Hacker Activity
+
+<Route author="imlonghao" example="/hackerone/hacktivity" path="/hackerone/hacktivity" radar="1"/>
+
 ## Instapaper
 
 ### 个人分享
@@ -406,6 +412,10 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route author="DIYgod HenryQW" example="/coronavirus/dxy/data/湖北/武汉" path="/coronavirus/dxy/data/:province?/:city?" :paramsDesc="['省/直辖市名，缺省或错误则返回全国数据','城市名，缺省或错误则返回全省数据。直辖市请使用区/县名。']"/>
 
+### 腾讯新闻 - 新型冠状病毒肺炎实时辟谣
+
+<Route author="DIYgod" example="/coronavirus/qq/fact" path="/coronavirus/qq/fact"/>
+
 ### South China Morning Post - China coronavirus outbreak
 
 <Route author="DIYgod" example="/coronavirus/scmp" path="/coronavirus/scmp"/>
@@ -413,6 +423,15 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 新型冠状病毒疫情概况(数据源:丁香医生)
 
 <Route author="KotoriK" example="/coronavirus/virus/湖北|香港" path="/coronavirus/virus/:province?" :paramsDesc="省份名称简写，如 新疆维吾尔自治区 简写为 新疆。"/>
+### 澳門特別行政區政府 抗疫專頁：最新消息
+
+官方網址：[https://www.ssm.gov.mo/apps1/PreventWuhanInfection/ch.aspx](https://www.ssm.gov.mo/apps1/PreventWuhanInfection/ch.aspx)
+
+<Route author="KeiLongW" example="/coronavirus/mogov-2019ncov/ch" path="/coronavirus/mogov-2019ncov/:lang" :paramsDesc="['語言']"/>
+
+| 中文 | 英文 | 葡文 |
+| ---- | ---- | ---- |
+| ch   | en   | pt   |
 
 ## 新趣集
 
