@@ -34,7 +34,7 @@ module.exports = {
         },
     },
     markdown: {
-        slugify: function(s) {
+        slugify: function (s) {
             return _slugify(
                 pinyin(s, {
                     style: pinyin.STYLE_NORMAL,
@@ -129,6 +129,8 @@ module.exports = {
                                 'reading',
                                 'government',
                                 'study',
+                                'journal',
+                                'finance',
                                 'other',
                             ],
                         },
@@ -191,6 +193,8 @@ module.exports = {
                                 'reading',
                                 'government',
                                 'study',
+                                'journal',
+                                'finance',
                                 'other',
                             ],
                         },

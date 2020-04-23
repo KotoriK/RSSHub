@@ -8,7 +8,7 @@ pageClass: routes
 
 ### 论坛更新
 
-<Route author="hoilc" example="/2048/bbs/16" path="/2048/bbs/:fid" :paramsDesc="['板块 ID, 可在 URL 中找到, 例如, `thread.php?fid-16.html`中, 板块 ID 为`16`']"/>
+<Route author="hoilc" example="/2048/bbs/16" path="/2048/bbs/:fid" :paramsDesc="['板块 ID, 可在 URL 中找到, 例如, `thread.php?fid-16.html`中, 板块 ID 为`16`']" supportBT="1" />
 
 ## 60-Second Science - Scientific American
 
@@ -24,20 +24,11 @@ pageClass: routes
 
 ## AcFun
 
-### 番剧
+见 [#AcFun](/anime.html#acfun)
 
-<Route author="xyqfer" example="/acfun/bangumi/5022158" path="/acfun/bangumi/:id" :paramsDesc="['番剧 id']"/>
+## AGE 动漫
 
-::: tip 提示
-
-番剧 id 不包含开头的 aa。
-例如：http://www.acfun.cn/bangumi/aa5022158 的番剧 id 是 5022158，不包括开头的 aa。
-
-:::
-
-### 用户投稿
-
-<Route author="wdssmq" example="/acfun/user/video/14450522" path="/acfun/user/video/:id" :paramsDesc="['用户 UID']"/>
+见 [#AGE 动漫](/anime.html#age-dong-man)
 
 ## bilibili
 
@@ -51,13 +42,13 @@ pageClass: routes
 
 | base                     | govern                 |
 | ------------------------ | ---------------------- |
-| https://www.88btbtt.com/ | http://www.1btjia.com/ |
+| https://www.88btbtt.com/ | http://www.2btjia.com/ |
 
 </Route>
 
 ::: tip 提示
 
-由于 BT 之家域名有多个. 此 feed 对应[`https://www.88btbtt.com`](https://www.88btbtt.com)域名和[`http://www.1btjia.com/`](http://www.1btjia.com/)域名.
+由于 BT 之家域名有多个. 此 feed 对应[`https://www.88btbtt.com`](https://www.88btbtt.com)域名和[`http://www.2btjia.com/`](http://www.2btjia.com/)域名.
 可空，默认为 base
 
 :::
@@ -145,6 +136,10 @@ pageClass: routes
 |-----|------|------|-----|
 |userwanted|userwatched|userowned|userposts|
 </Route>
+
+### 最佳评论
+
+<Route author="DCJaous" example="/javlibrary/bestreviews" path="/javlibrary/bestreviews" radar="1" />
 
 ## Last.fm
 
@@ -273,7 +268,7 @@ pageClass: routes
 
 ### 分区帖子
 
-<Route author="zhboner" example="/t66y/20/2" path="/t66y/:id/:type?" :paramsDesc="['分区 id, 可在分区页 URL 中找到', '类型 id, 可在分区类型过滤后的 URL 中找到']">
+<Route author="zhboner" example="/t66y/20/2" path="/t66y/:id/:type?" :paramsDesc="['分区 id, 可在分区页 URL 中找到', '类型 id, 可在分区类型过滤后的 URL 中找到']" anticrawler="1">
 
 > 注意：并非所有的分区都有子类型，可以参考成人文学交流区的[古典武侠]这一子类型。
 
@@ -293,7 +288,7 @@ pageClass: routes
 
 ### 帖子跟踪
 
-<Route author="cnzgray" example="/t66y/post/3286088" path="/t66y/post/:tid" :paramsDesc="['帖子 id, 可在帖子 URL 中找到']">
+<Route author="cnzgray" example="/t66y/post/3286088" path="/t66y/post/:tid" :paramsDesc="['帖子 id, 可在帖子 URL 中找到']" anticrawler="1">
 
 ::: tip 提示
 
@@ -334,10 +329,6 @@ pageClass: routes
 ### 新片精品
 
 <Route author="imgss" example="/dytt" path="/dytt" supportBT="1"/>
-
-## 抖音
-
-见 [#抖音](/social-media.html#dou-yin)
 
 ## 高清电台
 
@@ -478,6 +469,12 @@ pageClass: routes
 ### 电台节目
 
 <Route author="kt286" example="/radio/2/520767" path="/radio/:channelname/:name" :paramsDesc="['频道ID, 可在对应专辑页面的 URL 中找到','节目ID，可在对应专辑页面的 URL 中找到']" supportPodcast="1"/>
+
+## 追新番日剧站
+
+### 更新列表
+
+<Route author="mengx8" example="/zhuixinfan/list" path="/zhuixinfan/list" radar="1" />
 
 ## 字幕库
 

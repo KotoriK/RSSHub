@@ -292,11 +292,9 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 ## Lofter
 
-::: tip 提示
+### 用户
 
-官方提供了用户主页 RSS: http://**:username**.lofter.com/rss
-
-:::
+<Route author="hondajojo" example="/lofter/user/tingtingtingtingzhi" path="/lofter/user/:name" :paramsDesc="['Lofter 用户名, 在URL里']"/>
 
 ### 话题(标签)
 
@@ -307,6 +305,14 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 | 最新 | 日榜 | 周榜 | 月榜  | 总榜  |
 
 ## Mastodon
+
+::: tip 提示
+
+官方提供了用户时间线 RSS: https://**:instance**/users/**:username**.atom 或 https://**:instance**/users/**:username**.rss
+
+例如：https://pawoo.net/users/pawoo_support.atom 或 https://pawoo.net/users/pawoo_support.rss
+
+:::
 
 ### 实例公共时间线
 
@@ -370,7 +376,7 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 ### 频道
 
-<Route author="DIYgod" example="/telegram/channel/awesomeDIYgod" path="/telegram/channel/:username" :paramsDesc="['频道 username']">
+<Route author="DIYgod" example="/telegram/channel/awesomeDIYgod" path="/telegram/channel/:username" :paramsDesc="['频道 username']" radar="1">
 
 ::: tip 提示
 
@@ -417,6 +423,10 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 ### 关键词
 
 <Route author="DIYgod" example="/twitter/keyword/RSSHub" path="/twitter/keyword/:keyword" :paramsDesc="['关键词']" radar="1"/>
+
+### Trends
+
+<Route author="sakamossan" example="/twitter/trends/23424856" path="/twitter/trends/:woeid?" :paramsDesc="['Where On Earth ID. 默认 woeid=1 (World Wide)']" radar="1"/>
 
 ## VueVlog
 
@@ -510,6 +520,20 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 <Route author="umm233" example="/douban/movie/weekly" path="/douban/movie/weekly"/>
 
+### 豆瓣电影分类
+
+<Route author="zzwab" example="/douban/movie/classification/R/7.5/Netflix,剧情,2020" path="/douban/movie/classification/:sort?/:score?/:tags?" :paramsDesc="['排序方式，默认为U', '最低评分，默认不限制', '分类标签，多个标签之间用英文逗号分隔，常见的标签到豆瓣电影的分类页面查看，支持自定义标签']" />
+
+排序方式可选值如下
+
+| 近期热门 | 标记最多 | 评分最高 | 最近上映 |
+| -------- | -------- | -------- | -------- |
+| U        | T        | S        | R        |
+
+### 豆瓣电影人
+
+<Route author="minimalistrojan" example="/douban/celebrity/1274261" path="/douban/celebrity/:id/:sort?" :paramsDesc="['电影人 id', '排序方式，缺省为 `time`（时间排序），可为 `vote` （评价排序）']"/>
+
 ### 豆瓣小组
 
 <Route author="DIYgod" example="/douban/group/camera" path="/douban/group/:groupid" :paramsDesc="['豆瓣小组的 id']"/>
@@ -600,16 +624,6 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 </Route>
 
-## 抖音
-
-### 用户动态
-
-<Route author="DIYgod" example="/douyin/user/93610979153" path="/douyin/user/:id" :paramsDesc="['用户 id, 可在 分享出去获得的用户主页 URL 中找到']"/>
-
-### 喜欢的视频
-
-<Route author="xyqfer" example="/douyin/like/93610979153" path="/douyin/like/:id" :paramsDesc="['用户 id, 可在 分享出去获得的用户主页 URL 中找到']"/>
-
 ## 饭否
 
 ::: warning 注意
@@ -678,7 +692,7 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 ### 闲置（分类）
 
-<Route author="xyqfer" example="/dgtle/trade/111" path="/dgtle/trade/:typeId?" :paramsDesc="['分类 id，默认为全部']">
+<Route author="xyqfer hoilc" example="/dgtle/trade/111" path="/dgtle/trade/:typeId?" :paramsDesc="['分类 id，默认为全部']">
 
 | 全部 | 电脑 | 手机 | 平板 | 相机 | 影音 | 外设 | 生活 | 公告 |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -688,7 +702,7 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 ### 闲置（关键词）
 
-<Route author="gaoliang" example="/dgtle/trade/search/ipad" path="/dgtle/trade/search/:keyword" :paramsDesc="['搜索关键词']"/>
+<Route author="gaoliang hoilc" example="/dgtle/trade/search/ipad" path="/dgtle/trade/search/:keyword" :paramsDesc="['搜索关键词']"/>
 
 ### 鲸图（分类）
 
@@ -770,47 +784,23 @@ rule
 
 <Route author="kt286" example="/weibo/oasis/user/1990895721" path="/weibo/oasis/user/:userid" :paramsDesc="['用户 id, 可在用户主页 URL 中找到']" anticrawler="1"/>
 
-## 雪球
-
-### 用户动态
-
-<Route author="imlonghao" example="/xueqiu/user/8152922548" path="/xueqiu/user/:id/:type?" :paramsDesc="['用户 id, 可在用户主页 URL 中找到', '动态的类型, 不填则默认全部']">
-
-| 原发布 | 长文 | 问答 | 热门 | 交易 |
-| ------ | ---- | ---- | ---- | ---- |
-| 0      | 2    | 4    | 9    | 11   |
-
-</Route>
-
-### 用户收藏动态
-
-<Route author="imlonghao" example="/xueqiu/favorite/8152922548" path="/xueqiu/favorite/:id" :paramsDesc="['用户 id, 可在用户主页 URL 中找到']"/>
-
-### 用户自选动态
-
-<Route author="hillerliao" example="/xueqiu/user_stock/1247347556" path="/xueqiu/user_stock/:id" :paramsDesc="['用户 id, 可在用户主页 URL 中找到']"/>
-
-### 基金净值更新
-
-<Route author="HenryQW" example="/xueqiu/fund/040008" path="/xueqiu/fund/:id" :paramsDesc="['基金代码, 可在基金主页 URL 中找到. 此路由的数据为场外基金 (`F`开头)']"/>
-
-### 组合最新调仓信息
-
-<Route author="ZhishanZhang" example="/xueqiu/p/ZH1288184" path="/xueqiu/snb/:id" :paramsDesc="['组合代码, 可在组合主页 URL 中找到.']"/>
-
-### 股票信息
-
-<Route author="YuYang" example="/xueqiu/stock_info/SZ000002" path="/xueqiu/stock_info/:id/:type?" :paramsDesc="['股票代码（需要带上交易所）', '动态的类型, 不填则为股票公告']">
-
-| 公告         | 新闻 | 研报     |
-| ------------ | ---- | -------- |
-| announcement | news | research |
-
-</Route>
-
 ### 热帖
 
 <Route author="hillerliao" example="/xueqiu/hots" path="/xueqiu/hots"/>
+
+## 小红书
+
+### 用户笔记和专辑
+
+<Route author="lotosbin" example="/xiaohongshu/user/593032945e87e77791e03696/notes" path="/xiaohongshu/user/:user_id/notes" :paramsDesc="['user_id']"/>
+
+### 用户专辑
+
+<Route author="lotosbin" example="/xiaohongshu/user/593032945e87e77791e03696/album" path="/xiaohongshu/user/:user_id/album" :paramsDesc="['user_id']"/>
+
+### 专辑
+
+<Route author="lotosbin" example="/xiaohongshu/board/5db6f79200000000020032df" path="/xiaohongshu/board/:board_id" :paramsDesc="['board_id']" />
 
 ## 知乎
 

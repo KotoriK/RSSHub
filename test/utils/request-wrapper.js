@@ -19,7 +19,7 @@ afterEach(() => {
     const http = require('http');
     const httpWrap = (func) => {
         const origin = func;
-        return function(url, request) {
+        return function (url, request) {
             if (typeof url === 'object') {
                 if (url instanceof URL) {
                     check(request);
@@ -40,18 +40,18 @@ describe('got', () => {
     it('headers', async () => {
         nock(/rsshub\.test/)
             .get(/.*/)
-            .times(4)
-            .reply(function() {
+            .times(3)
+            .reply(function () {
                 expect(this.req.headers.server).toBe('RSSHub');
-                expect(this.req.headers.referer).toBe('http://www.rsshub.test');
+                expect(this.req.headers.referer).toBe('http://api.rsshub.test');
+                expect(this.req.headers.host).toBe('api.rsshub.test');
                 return [200, simpleResponse];
             });
 
-        await got.get('http://rsshub.test/test');
-        await got.get('http://rsshub.test');
         await got.get('http://api.rsshub.test/test');
+        await got.get('http://api.rsshub.test');
 
-        await parser.parseURL('http://rsshub.test/test');
+        await parser.parseURL('http://api.rsshub.test/test');
     });
 
     it('proxy socks', async () => {
@@ -132,7 +132,7 @@ describe('got', () => {
         nock(/rsshub\.test/)
             .get('/auth')
             .times(2)
-            .reply(function() {
+            .reply(function () {
                 expect(this.req.headers['proxy-authorization']).toBe('Basic testtest');
                 return [200, simpleResponse];
             });

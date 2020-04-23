@@ -42,6 +42,16 @@ For instance, in https://www.leboncoin.fr/recherche/?**category=10&locations=Par
 
 <Route author="fengkx" example="/duozhuayu/search/JavaScript" path="/duozhuayu/search/:wd" :paramsDesc="['搜索关键词']"/>
 
+## 好好住
+
+### 整屋案例
+
+<Route author="hoilc" example="/haohaozhu/whole-house/日式" path="/haohaozhu/whole-house/:keyword?" :paramsDesc="['分类名或关键字，请使用中文']"/>
+
+### 发现
+
+<Route author="hoilc" example="/haohaozhu/discover/厨房" path="/haohaozhu/discover/:keyword?" :paramsDesc="['分类名或关键字，请使用中文']"/>
+
 ## 京东众筹
 
 ### 众筹项目
@@ -189,6 +199,12 @@ For instance, in https://www.leboncoin.fr/recherche/?**category=10&locations=Par
 
 <Route author="LogicJake" example="/weidian/goods/431508863" path="/weidian/goods/:id" :paramsDesc="['商铺 id']"/>
 
+## 消费者报道
+
+### 要闻
+
+<Route author="EsuRt" example="/ccreports/article" path="/ccreports"/>
+
 ## 小米
 
 ### 小米众筹
@@ -201,7 +217,7 @@ For instance, in https://www.leboncoin.fr/recherche/?**category=10&locations=Par
 
 ### 小米有品每日上新
 
-<Route author="xyqfer" example="/mi/youpin/new" path="/mi/youpin/new"/>
+<Route author="xyqfer DIYgod" example="/mi/youpin/new" path="/mi/youpin/new"/>
 
 ## 宜家 IKEA
 

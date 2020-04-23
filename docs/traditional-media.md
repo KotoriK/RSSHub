@@ -14,7 +14,7 @@ pageClass: routes
 
 ### 话题
 
-<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']"/>
+<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']" radar="1"/>
 
 ## BBC
 
@@ -178,9 +178,9 @@ Category 列表:
 
 <Route author="HenryQW" example="/dwnews/yaowen/global" path="/dwnews/yaowen/:region?" :paramsDesc="['要闻地区，默认`全部`，可选地区如下']">
 
-| 全部   | 国际   | 中国  | 香港     | 台湾   | 经济   |
-| ------ | ------ | ----- | -------- | ------ | ------ |
-| yaowen | global | china | hongkong | taiwan | jingji |
+| 全部   | 国际   | 中国  | 香港     | 台湾   | 经济   | 视觉   |
+| ------ | ------ | ----- | -------- | ------ | ------ | ------ |
+| yaowen | global | china | hongkong | taiwan | jingji | shijue |
 
 </Route>
 
@@ -306,6 +306,16 @@ category 对应的关键词有
 
 <Route author="xyqfer" example="/thepaper/channel/27224" path="/thepaper/channel/:id" :paramsDesc="['频道 id']"/>
 
+### 澎湃美数组作品集
+
+<Route author="umm233" example="/thepaper/839studio/2" path="/thepaper/839studio/:id?" :paramsDesc="['分类 id 可选，默认订阅全部分类']">
+
+| 视频 | 交互 | 信息图 | 数据故事 |
+| ---- | ---- | ------ | -------- |
+| 2    | 4    | 3      | 453      |
+
+</Route>
+
 ## 人民日报
 
 ### 观点
@@ -319,6 +329,16 @@ category 对应的关键词有
 ### 习近平系列重要讲话
 
 <Route author="LogicJake"  example="/people/xjpjh" path="/people/xjpjh/:keyword?/:year?" :paramsDesc="['关键词，默认不填','年份，默认all']"/>
+
+## 人民日报社 国际金融报
+
+### 栏目
+
+<Route author="Origami404" example="/ifnews/48" path="/ifnews/:cid" :paramsDesc="['栏目ID']">
+
+`cid`可在对应栏目的 url 后的参数中获取, 如`热点快报`的栏目 url 为`http://www.ifnews.com/column.html?cid=48`, `cid`即为`48`.
+
+</Route>
 
 ## 日本経済新聞
 

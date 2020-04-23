@@ -42,6 +42,12 @@ pageClass: routes
 
 <Route author="LogicJake" example="/dekudeals/most-wanted" path="/dekudeals/:type" :paramsDesc="['分类名称，可在 URL 中查看']"/>
 
+## Epic Games Store
+
+### 免费游戏
+
+<Route author="Zyx-A" example="/epicgames/freegames" path="/epicgames/freegames"/>
+
 ## GNN.tw 游戏新闻
 
 ### GNN.tw 游戏新闻
@@ -100,11 +106,15 @@ pageClass: routes
 
 ### eShop 新发售游戏
 
-<Route author="HFO4" example="/nintendo/eshop/hk" path="/nintendo/eshop/:region" :paramsDesc="['地区标识，可为`hk`(港服),`jp`(日服),`us`(美服)']"/>
+<Route author="HFO4" example="/nintendo/eshop/hk" path="/nintendo/eshop/:region" :paramsDesc="['地区标识，可为`hk`(港服),`jp`(日服),`us`(美服), `cn`(国服)']"/>
 
 ### 首页资讯（香港）
 
 <Route author="HFO4" example="/nintendo/news" path="/nintendo/news"/>
+
+### 首页资讯（中国）
+
+<Route author="NeverBehave" example="/nintendo/news/china" path="/nintendo/news/china"/>
 
 ### 直面会
 
@@ -151,6 +161,25 @@ pageClass: routes
 
 <Route author="LightStrawberry" example="/psnine/game" path="/psnine/game"/>
 
+## Rockstar Games Social Club
+
+### 在线活动
+
+<Route author="kookxiang" example="/socialclub/events/GTAV" path="/socialclub/events/:game?" :paramsDesc="['游戏代码（默认所有）']">
+
+| 游戏代码 | 游戏名称     |
+| -------- | ------------ |
+| GTAV     | 侠盗猎车手 5 |
+| RDR2     | 荒野大镖客 2 |
+
+</Route>
+
+## ScoreSaber
+
+### 用户动态
+
+<Route author="zhangpeng2k" example="/scoresaber/user/76561198400378578" path="/scoresaber/user/:id" :paramsDesc="['用户 id, 用户主页URL中获取']"/>
+
 ## Steam
 
 ### Steam search
@@ -166,6 +195,16 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 ### Steam news
 
 <Route author="maple3142" example="/steam/news/282800" path="/steam/news/:appids" :paramsDesc="['游戏 id']" radar="1"/>
+
+## SteamDB
+
+### 免费游戏
+
+<Route author="dearrrfish" example="/steamdb/free" path="/steamdb/free/:type?" :paramsDesc="['免费类型，留空为不过滤']"/>
+
+| 全部   | 周末    | 永久 |
+| ------ | ------- | ---- |
+| <留空> | weekend | keep |
 
 ## SteamGifts
 
@@ -210,6 +249,10 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 ### 台服公告
 
 <Route author="hoilc" example="/pcr/news-tw" path="/pcr/news-tw"/>
+
+### 国服公告
+
+<Route author="hoilc" example="/pcr/news-cn" path="/pcr/news-cn"/>
 
 ## 篝火营地
 
@@ -394,3 +437,13 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 ### 公告
 
 <Route author="magic-akari" example="/kirara/news" path="/kirara/news"/>
+
+## マギアレコード（Magia Record, 魔法纪录）
+
+### 游戏公告
+
+<Route author="y2361547758" example="/magireco/announcements" path="/magireco/announcements"/>
+
+### 游戏横幅
+
+<Route author="y2361547758" example="/magireco/event_banner" path="/magireco/event_banner"/>
