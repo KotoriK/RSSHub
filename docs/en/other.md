@@ -51,6 +51,12 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 
 <RouteEn author="Gnnng" example="/coronavirus/sg-moh" path="/coronavirus/sg-moh"/>
 
+## Darwin Awards
+
+### Articles
+
+<Route author="zoenglinghou" example="/darwinawards/all" path="/darwinawards/all" />
+
 ## dcinside
 
 ### board
@@ -102,6 +108,24 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 | Japanese | English |
 | -------- | ------- |
 | ja       | en      |
+
+</RouteEn>
+
+## MITRE
+
+### All Publications
+
+<Route author="sbilly" example="/mitre/publications" path="/mitre/publications" />
+
+## Nobel Prize
+
+### List
+
+<RouteEn author="nczitzk" example="/nobelprize" path="/nobelprize/:caty" :paramsDesc="['Category, see below, all by default']">
+
+| Physics | Chemistry | Physiology or Medicine | Literature | Peace | Economic Science |
+| ------- | --------- | ---------------------- | ---------- | ----- | ----------------- |
+| physics | chemistry | physiology-or-medicine | literature | peace | economic-sciences |
 
 </RouteEn>
 

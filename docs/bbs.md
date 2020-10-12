@@ -118,6 +118,16 @@ pageClass: routes
 
 <Route author="xyqfer" example="/nga/post/18449558" path="/nga/post/:tid"  :paramsDesc="['帖子 id, 可在帖子 URL 找到']" radar="1"/>
 
+## Quicker
+
+### 讨论区
+
+<Route author="Cesaryuan" example="/quicker/qa" path="/quicker/qa"/>
+
+### 用户动作更新
+
+<Route author="Cesaryuan" example="/quicker/user/action/18359/Cesaryuan" path="/quicker/user/action/:uid/:person" :paramsDesc="['用户ID，可在用户主页链接里找到', '用户昵称，可在用户主页链接里找到']" />
+
 ## RF 技术社区
 
 ### 文章
@@ -168,11 +178,21 @@ pageClass: routes
 
 <Route author="liyefox" example="/v2ex/tab/hot" path="/v2ex/tab/:tabid" :paramsDesc="['tab标签ID,在 URL 可以找到']"/>
 
+## 巴哈姆特電玩資訊站
+
+### 熱門推薦
+
+<Route author="nczitzk" example="/gamer/hot/47157" path="/gamer/hot/:bsn" :paramsDesc="['板块 id，在 URL 可以找到']"/>
+
 ## 才符
 
 ### 用户动态
 
 <Route author="nczitzk" example="/91ddcc/user/2377095" path="/91ddcc/user/:user" :paramsDesc="['用户ID，在 URL 可以找到']"/>
+
+### 驿站帖子
+
+<Route author="nczitzk" example="/91ddcc/stage/206" path="/91ddcc/stage/:stage" :paramsDesc="['驿站ID，在 URL 可以找到']"/>
 
 ## 电鸭社区
 
@@ -197,6 +217,62 @@ pageClass: routes
 ### 虎扑 BBS 论坛
 
 <Route author="LogicJake" example="/hupu/bbs/bxj/2" path="/hupu/bbs/:id/:order?" :paramsDesc="['板块 id，可在板块 URL 找到', '排序方式，1最新回帖（默认），2最新发帖，3精华帖']"/>
+
+### 分类
+
+<Route author="nczitzk" example="/hupu/all/gambia" path="/hupu/all/:caty" :paramsDesc="['分类名，见下表']">
+
+| 分类         | 名称     |
+| ------------ | -------- |
+| NBA 论坛     | nba      |
+| CBA 论坛     | cba      |
+| 运动和装备   | gear     |
+| 国际足球论坛 | soccer   |
+| 中国足球论坛 | csl      |
+| 综合体育     | sports   |
+| 步行街       | gambia   |
+| 彩票中心     | lottery  |
+| 自建版块     | boards   |
+| 虎扑社团     | group    |
+| 站务管理     | feedback |
+
+更多参见 [虎扑社区版块目录](https://bbs.hupu.com/boards.php) 左侧导航栏各板块分类页
+
+</Route>
+
+### 子站
+
+<Route author="nczitzk" example="/hupu/dept/nba" path="/hupu/dept/:dept" :paramsDesc="['名称，见下表']">
+
+| 子站     | 名称         |
+| -------- | ------------ |
+| NBA      | nba          |
+| 国际足球 | soccer       |
+| 中国足球 | soccer-china |
+| CBA      | cba          |
+| 电竞     | gg           |
+
+</Route>
+
+## 华为心声社区
+
+### 华为家事
+
+<Route author="nczitzk" example="/huawei/xinsheng" path="/huawei/xinsheng/:caty?/:order?/:keyword?" :paramsDesc="['分区 ID, 见下表，默认为全部帖子', '排序方式, 见下表，默认为最新回复', '关键词，默认为空']">
+
+分区 ID
+
+| 全部帖子 | 公司文件 | 管理思考 | 产品改进 | 版务公告 |
+| -------- | -------- | -------- | -------- | -------- |
+|          | 155      | 415      | 427      | 419      |
+
+排序方式
+
+| 最新发帖 | 最新回复 | 最多回复   | 最多点击  |
+| -------- | -------- | ---------- | --------- |
+| cTime    | rTime    | replycount | viewcount |
+
+</Route>
 
 ## 看雪
 
@@ -305,6 +381,22 @@ pageClass: routes
 
 </Route>
 
+## 水木社区
+
+### 分区文章
+
+<Route author="nczitzk" example="/newsmth/section/university" path="/newsmth/section/:section" :paramsDesc="['分区名，见下表']">
+
+| 社区管理  | 国内院校   | 休闲娱乐      | 五湖四海 | 游戏运动 | 社会信息 | 知性感性 | 文化人文 | 学术科学 | 电脑技术   |
+| --------- | ---------- | ------------- | -------- | -------- | -------- | -------- | -------- | -------- | ---------- |
+| community | university | entertainment | location | game     | society  | romance  | culture  | science  | technology |
+
+</Route>
+
+### 用户文章
+
+<Route author="nczitzk" example="/newsmth/account/fef705ec94819a5a87941759e33c0982" path="/newsmth/account/:id" :paramsDesc="['用户 id，可在用户页的 URL 中找到']"/>
+
 ## 天涯论坛
 
 ### 子版块
@@ -342,6 +434,24 @@ pageClass: routes
 ### 焦点新闻
 
 <Route author="nczitzk" example="/creaders/headline" path="/creaders/headline"/>
+
+## 文学城
+
+### 博客
+
+<Route author="changlan" example="/wenxuecity/blog/43626" path="/wenxuecity/blog/:id" :paramsDesc="['博客 ID, 可在 URL 中找到']" radar="1" />
+
+### 最热主题
+
+<Route author="changlan" example="/wenxuecity/hot/9" path="/wenxuecity/hot/:cid" :paramsDesc="['版面 ID, 可在 URL 中找到']" radar="1" />
+
+### 最新主题
+
+<Route author="changlan" example="/wenxuecity/bbs/tzlc" path="/wenxuecity/bbs/:cat/:elite?" :paramsDesc="['版面名, 可在 URL 中找到', '是否精华区, 1 为精华区']" radar="1" />
+
+### 焦点新闻
+
+<Route author="nczitzk" example="/wenxuecity/news" path="/wenxuecity/news" />
 
 ## 小米社区
 

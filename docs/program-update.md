@@ -14,6 +14,12 @@ pageClass: routes
 
 </Route>
 
+## Anki
+
+### Changes
+
+<Route author="nczitzk" example="/anki/changes" path="/anki/changes"/>
+
 ## Apkpure
 
 ### Versions
@@ -46,7 +52,7 @@ pageClass: routes
 
 ### 新的 Dropzone 动作
 
-<Route author="HenryQW" example="/aptonic/action" path="/aptonic/action"/>
+<Route author="HenryQW" example="/aptonic/action" path="/aptonic/action/:untested?" :paramsDesc="['填写任意值，将会同时包括非官方的 Dropzone 动作']"/>
 
 ## Bugly SDK
 
@@ -196,6 +202,12 @@ pageClass: routes
 
 见 [#playstation](/game.html#playstation)
 
+## Quicker
+
+### 版本更新
+
+<Route author="Cesaryuan" example="/quicker/update" path="/quicker/update"/>
+
 ## RSSHub
 
 ### 有新路由啦
@@ -227,6 +239,10 @@ pageClass: routes
 ### Changelog
 
 <Route author="cnzgray" example="/typora/changelog" path="/typora/changelog"/>
+
+### Dev Release Changelog
+
+<Route author="nczitzk" example="/typora/changelog-dev/macOS" path="/typora/changelog-dev/:os" :paramsDesc="['操作系统类型, 可选 `macOS` 或 `Windows` 与 `Linux`，默认为 `macOS`']"/>
 
 ## xclient.info
 

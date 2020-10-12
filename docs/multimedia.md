@@ -75,6 +75,12 @@ pageClass: routes
 
 <Route author="Songkeys" example="/eztv/torrents/6048596" path="/eztv/torrents/:imdb_id" :paramsDesc="['想搜寻的 show 的种子所对应的 IMDB ID, 可在 [IMDB](https://www.imdb.com) 官网找到']" supportBT="1"/>
 
+## Hentaimama
+
+### 近期更新
+
+<Route author="everyonus" example="/hentaimama/videos" path="/hentaimama/videos" />
+
 ## JavBus
 
 ### 首页
@@ -124,6 +130,116 @@ pageClass: routes
 ### 系列 / 欧陆风云
 
 <Route author="MegrezZhu CoderTonyChan Felix2yu" example="/javbus/western/series/20" path="/javbus/western/series/:seriesid" :paramsDesc="['系列id，详见作品中系列的链接']" />
+
+## JavDB
+
+### 主页
+
+<Route author="nczitzk" example="/javdb/home" path="/javdb/home/:caty?/:sort?/:filter?" :paramsDesc="['分类，见下表，默认为 `有碼`', '排序，见下表，默认为 `磁鏈更新排序`', '过滤，见下表，默认为 `可下载`']">
+
+分类
+
+| 有碼     | 無碼       | 歐美    | FC2 |
+| -------- | ---------- | ------- | --- |
+| censored | uncensored | western | fc2 |
+
+排序
+
+| 发布日期排序 | 磁鏈更新排序 |
+| ------------ | ------------ |
+| 1            | 2            |
+
+过滤
+
+| 全部 | 可下载 | 含字幕 | 含短評 |
+| ---- | ------ | ------ | ------ |
+| 0    | 1      | 2      | 3      |
+
+</Route>
+
+### 分類
+
+<Route author="nczitzk" example="/javdb/tags/c2=5&c10=1" path="/javdb/tags/:query?/:caty?" :paramsDesc="['筛选，默认为 `c10=1`', '分类，见下表，默认为 `有碼`']">
+
+::: tip 提示
+
+在 [分類](https://javdb.com/tags) 中选定分类后，URL 中 `tags?` 后的字段即为筛选参数。
+
+如 <https://javdb.com/tags?c2=5&c10=1> 中 `c2=5&c10=1` 为筛选参数。
+
+:::
+
+分类
+
+| 有碼     | 無碼       | 歐美    | FC2 |
+| -------- | ---------- | ------- | --- |
+| censored | uncensored | western | fc2 |
+
+</Route>
+
+### 排行榜
+
+<Route author="nczitzk" example="/javdb/rankings" path="/javdb/rankings/:caty?/:time?" :paramsDesc="['分类，见下表，默认为 `有碼`', '时间，见下表，默认为 `日榜`']">
+
+分类
+
+| 有碼     | 無碼       | 歐美    | FC2 |
+| -------- | ---------- | ------- | --- |
+| censored | uncensored | western | fc2 |
+
+时间
+
+| 日榜  | 週榜   | 月榜    |
+| ----- | ------ | ------- |
+| daily | weekly | monthly |
+
+</Route>
+
+### 搜索
+
+<Route author="nczitzk" example="/javdb/search/巨乳" path="/javdb/search/:keyword?/:filter?" :paramsDesc="['关键字，默认为空', '过滤，见下表，默认为 `可播放`']">
+
+| 全部 | 可播放   | 單體作品 | 演員  | 片商  | 導演     | 系列   | 番號 | 可下載   | 字幕  | 預覽圖  |
+| ---- | -------- | -------- | ----- | ----- | -------- | ------ | ---- | -------- | ----- | ------- |
+|      | playable | single   | actor | maker | director | series | code | download | cnsub | preview |
+
+</Route>
+
+### 演員
+
+<Route author="nczitzk" example="/javdb/actors/R2Vg" path="/javdb/actors/:id/:filter?" :paramsDesc="['编号，可在演员页 URL 中找到', '过滤，见下表，默认为 `全部`']">
+
+| 全部 | 可播放 | 單體作品 | 可下載 | 含字幕 |
+| ---- | ------ | -------- | ------ | ------ |
+|      | p      | s        | d      | c      |
+
+所有演员编号参见 [演員庫](https://javdb.com/actors)
+
+</Route>
+
+### 系列
+
+<Route author="nczitzk" example="/javdb/series/1NW" path="/javdb/series/:id/:filter?" :paramsDesc="['编号，可在系列页 URL 中找到', '过滤，见下表，默认为 `全部`']">
+
+| 全部 | 可播放   | 單體作品 | 可下載   | 字幕  | 預覽圖  |
+| ---- | -------- | -------- | -------- | ----- | ------- |
+|      | playable | single   | download | cnsub | preview |
+
+所有系列编号参见 [系列庫](https://javdb.com/series)
+
+</Route>
+
+### 片商
+
+<Route author="nczitzk" example="/javdb/makers/7R" path="/javdb/makers/:id/:filter?" :paramsDesc="['编号，可在片商页 URL 中找到', '过滤，见下表，默认为 `全部`']">
+
+| 全部 | 可播放   | 單體作品 | 可下載   | 字幕  | 預覽圖  |
+| ---- | -------- | -------- | -------- | ----- | ------- |
+|      | playable | single   | download | cnsub | preview |
+
+所有片商编号参见 [片商庫](https://javdb.com/makers)
+
+</Route>
 
 ## JavLibrary
 
@@ -191,8 +307,6 @@ pageClass: routes
 
 <Route author="wolfyu1991"  example="/mp4ba/复仇者联盟" path="/mp4ba/:keyword" :paramsDesc="['搜索关键字']" supportBT="1"/>
 
-</Route>
-
 ## MQube
 
 ### 全站最近更新
@@ -216,6 +330,86 @@ pageClass: routes
 ### 搜索结果
 
 <Route author="Lava-Swimmer" example="/nyaa/search/psycho-pass" path="/nyaa/search/:keyword" :paramsDesc="['搜索关键字']" supportBT="1"/>
+
+## OneJAV
+
+::: tip 提示
+
+官方提供的订阅源不支持 BT 下载订阅，地址为 <https://onejav.com/feeds/>
+
+:::
+
+### OneJAV BT
+
+<Route author="monsterxcn" example="/onejav/popular/30" path="/onejav/:type/:key?" :paramsDesc="['类型', '关键词']" supportBT="1" radar="1">
+
+**类型**
+
+| 最新 | 热门    | 随机   | 指定演员 | 指定标签 | 指定日期 |
+| ---- | ------- | ------ | -------- | -------- | -------- |
+| new  | popular | random | actress  | tag      | day      |
+
+**关键词**
+
+| 空 | 日期范围    | 演员名       | 标签名         | 日期     |
+| -- | ----------- | ------------ | -------------- | -------- |
+|    | 7 / 30 / 60 | Yua%20Mikami | Adult%20Awards | YYYYMMDD |
+
+**示例说明**
+
+-   `/onejav/new`
+
+    仅当类型为 `new` `popular` 或 `random` 时关键词可为 **空**
+
+-   `/onejav/popular/30`
+
+    `popular` `random` 类型的关键词可填写 `7` `30` 或 `60` 三个 **日期范围** 之一
+
+-   `/onejav/actress/Yua%20Mikami`
+
+    `actress` 类型的关键词必须填写 **演员名** ，可在 [此处](https://onejav.com/actress/) 演员单页链接中获取
+
+-   `/onejav/tag/Adult%20Awards`
+
+    `tag` 类型的关键词必须填写 **标签名** 且标签中的 `/` 必须替换为 `%2F` ，可在 [此处](https://onejav.com/tag/) 标签单页链接中获取
+
+-   `/onejav/day/20200730`
+
+    `day` 类型的关键词必须填写 **日期** ，按照示例写成形如 `20200730` 的格式
+
+</Route>
+
+## PornHub
+
+### 分类
+
+<Route author="nczitzk" example="/pornhub/category/popular-with-women" path="/pornhub/category/:caty" :paramsDesc="['类别，参见 [categories](https://cn.pornhub.com/webmasters/categories)']"/>
+
+### 搜索
+
+<Route author="nczitzk" example="/pornhub/search/stepsister" path="/pornhub/search/:keyword" :paramsDesc="['关键字']"/>
+
+### 用户
+
+<Route author="I2IMk" example="/pornhub/users/0maru0" path="/pornhub/users/:username" :paramsDesc="['用户名, 对应其专页地址的后面部分, 如 `pornhub.com/users/0maru0`']" />
+
+### 素人（Verified amateur /model）
+
+<Route author="I2IMk" example="/pornhub/model/stacy-starando" path="/pornhub/model/:username/:sort?" :paramsDesc="['用户名, 对应其专页地址的后面部分, 如 `pornhub.com/model/stacy-starando`', '排序方式, 下文会提到']" />
+
+### 色情明星（Verified model /pornstar）
+
+<Route author="I2IMk" example="/pornhub/pornstar/june-liu" path="/pornhub/pornstar/:username/:sort?" :paramsDesc="['用户名, 对应其专页地址的后面部分, 如 `pornhub.com/pornstar/june-liu`', '排序方式, 下文会提到']" />
+
+**排序方式 `sort`**
+
+| mr                   | mv                     | tr                 | lg           | cm          |
+| -------------------- | ---------------------- | ------------------ | ------------ | ----------- |
+| Most Recent 最新精选 | Most Viewed 最多次观看 | Top Rated 评价最好 | Longest 最长 | Newest 最新 |
+
+### 视频列表
+
+<Route author="I2IMk" example="/pornhub/category_url/video%3Fc%3D15%26o%3Dmv%26t%3Dw%26cc%3Djp" path="/pornhub/category_url/:url?" :paramsDesc="['相对路径, `pornhub.com/` 后的部分, 需手动 URL 编码']"/>
 
 ## rs05 人生 05 电影
 
@@ -492,6 +686,20 @@ pageClass: routes
 
 -   `https://rsshub.app/ximalaya/album/*`
 -   `https://rsshub.app/ximalaya/album/*.rss`
+
+:::
+
+</Route>
+
+## 小宇宙
+
+### 发现
+
+<Route author="prnake" example="/xiaoyuzhou" path="/xiaoyuzhou">
+
+::: warning 注意
+
+小宇宙的 api 需要验证 `x-jike-device-id`、`x-jike-access-token` 和 `x-jike-refresh-token` 。必要时需要自行配置，具体见部署文档。
 
 :::
 
