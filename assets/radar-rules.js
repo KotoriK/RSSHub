@@ -42,6 +42,42 @@
                 source: '/:uid',
                 target: '/bilibili/user/video/:uid',
             },
+            {
+                title: 'UP 主专栏',
+                docs: 'https://docs.rsshub.app/social-media.html#bilibili',
+                source: '/:uid',
+                target: '/bilibili/user/article/:uid',
+            },
+            {
+                title: 'UP 主默认收藏夹',
+                docs: 'https://docs.rsshub.app/social-media.html#bilibili',
+                source: '/:uid',
+                target: '/bilibili/user/fav/:uid',
+            },
+            {
+                title: 'UP 主投币视频',
+                docs: 'https://docs.rsshub.app/social-media.html#bilibili',
+                source: '/:uid',
+                target: '/bilibili/user/coin/:uid',
+            },
+            {
+                title: 'UP 主粉丝',
+                docs: 'https://docs.rsshub.app/social-media.html#bilibili',
+                source: '/:uid',
+                target: '/bilibili/user/followers/:uid',
+            },
+            {
+                title: 'UP 主关注用户',
+                docs: 'https://docs.rsshub.app/social-media.html#bilibili',
+                source: '/:uid',
+                target: '/bilibili/user/followings/:uid',
+            },
+            {
+                title: '用户追番列表',
+                docs: 'https://docs.rsshub.app/social-media.html#bilibili',
+                source: '/:uid',
+                target: '/bilibili/user/bangumi/:uid',
+            },
         ],
         manga: [
             {
@@ -169,7 +205,7 @@
         ],
     },
     'youtube.com': {
-        _name: 'Youtube',
+        _name: 'YouTube',
         www: [
             {
                 title: '用户',
@@ -2257,7 +2293,7 @@
             },
         ],
     },
-    'pknbc.com': {
+    'jjmhw.cc': {
         _name: '漫小肆',
         www: [
             {
@@ -2327,6 +2363,17 @@
                 docs: 'https://docs.rsshub.app/blog.html#jian-ning-xian-tan',
                 source: '/*',
                 target: '/blogs/jianning',
+            },
+        ],
+    },
+    'eventernote.com': {
+        _name: 'Eventernote',
+        www: [
+            {
+                title: '声优活动及演唱会',
+                docs: 'https://docs.rsshub.app/anime.html#eventernote',
+                source: '/actors/:name/:id/events',
+                target: '/eventernote/actors/:name/:id',
             },
         ],
     },

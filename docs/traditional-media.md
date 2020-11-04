@@ -28,7 +28,7 @@ pageClass: routes
 
 ### 话题
 
-<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']" radar="1"/>
+<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']" radar="1" rssbud="1"/>
 
 ## BBC
 
@@ -88,6 +88,18 @@ pageClass: routes
 
 相比官方 RSS，多提供全文。
 目录分类[见其网站](https://www.chicagotribune.com/about/ct-chicago-tribune-rss-feeds-htmlstory.html)。例如，`https://www.chicagotribune.com/arcio/rss/category/nation-world/` 对应的 RSSHub 路由是 `/chicagotribune/nation-world`。由于官方源的部分路由有两级，因此这里也相应需要填写子分类。
+
+</Route>
+
+## ChinaFile
+
+<Route author="oppilate" example="/chinafile/all" path="/chinafile/:category?" :paramsDesc="['分类，默认 `all`']">
+
+通过提取文章全文，以提供比官方源更佳的阅读体验。
+
+| 全部 | The China NGO Project |
+| ---- | --------------------- |
+| all  | ngo                   |
 
 </Route>
 
@@ -177,6 +189,30 @@ Solidot 提供的 feed:
 
 <Route author="xyqfer" example="/the-economist/gre-vocabulary" path="/the-economist/gre-vocabulary" />
 
+### 下载
+
+<Route author="nczitzk" example="/the-economist/download" path="/the-economist/download" >
+
+下载站：<http://www.cgx02.xyz/index.php?dir=/te>
+
+</Route>
+
+## The Wall Street Journal (WSJ)
+
+### 新闻
+
+<Route author="oppilate" example="/wsj/en-us/opinion" path="/wsj/:lang/:category" :paramsDesc="['语言，暂时仅限 `en-us`', '分类，见[WSJ 官网 RSS 分类](https://www.wsj.com/news/rss-news-and-feeds)']">
+
+通过提取文章全文，以提供比官方源更佳的阅读体验。
+
+</Route>
+
+## UDN
+
+### 轉角國際
+
+<Route author="emdoe" example="/udn/global/鏡頭背後" path="/udn/global/:tid" :paramsDesc="['標籤名稱，請在轉角國際首頁獲取；如果選擇輸入 `newest` 則輸出最新文章']">
+
 ## Yahoo
 
 ### 新聞
@@ -257,9 +293,9 @@ Category 列表:
 
 ### 新聞
 
-<Route author="Arracc" example="/yomiuri/news" path="/yomiuri/:category" :paramsDesc="['分类']">
+<Route author="Arracc" example="/yomiuri/news" path="/yomiuri/:category" :paramsDesc="['板块']">
 
-无料全文，综合页添加分类标签，可用于过滤。
+无料全文，综合页文章标题添加板块标签。
 
 | 総合 | 社会     | 政治     | 経済    | スポーツ | 国際  | 科学・ＩＴ | 選挙・世論調査 | エンタメ・文化 | 囲碁・将棋 | ライフ | 地域  | 社説      |
 | ---- | -------- | -------- | ------- | -------- | ----- | ---------- | -------------- | -------------- | ---------- | ------ | ----- | --------- |
@@ -581,9 +617,21 @@ category 对应的关键词有
 
 ### ホームページ
 
-<Route author="zjysdhr" example="/nikkei/index" path="/nikkei/index" radar="1">
+<Route author="zjysdhr" example="/nikkei/index" path="/nikkei/index" radar="1" rssbud="1">
 
 日文版首页
+
+</Route>
+
+### 新聞
+
+<Route author="Arracc" example="/nikkei/news" path="/nikkei/:category/:article_type?" :paramsDesc="['版块','文章类型，free仅无料全文，缺省为无料全文、有料非全文']">
+
+综合页文章标题添加板块标签
+
+| 総合 | マネーのまなび | 経済・金融 | 政治     | ビジネス | マネーのまなび | テクノロジー | 国際          | スポーツ | 社会・くらし | オピニオン | 文化    | FT     | 地域  | 日経ビジネス | ライフ |
+| ---- | -------------- | ---------- | -------- | -------- | -------------- | ------------ | ------------- | -------- | ------------ | ---------- | ------- | ------ | ----- | ------------ | ------ |
+| news | 未支持         | economy    | politics | business | 未支持         | technology   | international | sports   | society      | opinion    | culture | 未支持 | local | 未支持       | 未支持 |
 
 </Route>
 
@@ -633,23 +681,23 @@ category 对应的关键词有
 
 ### 热门
 
-<Route author="hoilc" example="/hk01/hot" path="/hk01/hot" radar="1"/>
+<Route author="hoilc" example="/hk01/hot" path="/hk01/hot" radar="1" rssbud="1"/>
 
 ### 栏目
 
-<Route author="hoilc" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ### 子栏目
 
-<Route author="hoilc" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ### 专题
 
-<Route author="hoilc" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ### 标签
 
-<Route author="hoilc" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ## 香港電台
 
@@ -695,6 +743,18 @@ category 对应的关键词有
 
 <Route author="xyqfer" example="/sina/rollnews" path="/sina/rollnews" />
 
+## 新浪体育
+
+### 综合
+
+<Route author="nczitzk" example="/sina/sports/volley" path="/sina/sports/:type" :paramsDesc="['运动类型，见下表']">
+
+| 排球   | 游泳 | 乒乓球   | 羽毛球 | 台球    | 田径     | 体操  | 冰雪   | 射击 | 马术  | 拳击搏击 | UFC | 其他   |
+| ------ | ---- | -------- | ------ | ------- | -------- | ----- | ------ | ---- | ----- | -------- | --- | ------ |
+| volley | swim | pingpang | badmin | snooker | tianjing | ticao | winter | sh   | mashu | kungfu   | ufc | others |
+
+</Route>
+
 ## 央视新闻
 
 ### 新闻联播
@@ -731,7 +791,7 @@ category 对应的关键词有
 
 ### 新闻联播文字版
 
-<Route author="luyuhuang" example="/xinwenlianbo/index" path="/xinwenlianbo/index" radar="1"/>
+<Route author="luyuhuang" example="/xinwenlianbo/index" path="/xinwenlianbo/index" radar="1" rssbud="1"/>
 
 ### 新闻联播文字版全文
 
@@ -823,7 +883,7 @@ category 对应的关键词有
 
 ### 新聞
 
-<Route author="luyuhuang" example="/chinatimes/realtimenews" path="/chinatimes/:caty" :paramsDesc="['类别']" radar="1">
+<Route author="luyuhuang" example="/chinatimes/realtimenews" path="/chinatimes/:caty" :paramsDesc="['类别']" radar="1" rssbud="1">
 
 | realtimenews | politic | opinion | life | star | money | society | hottopic | tube    | world | armament | chinese | fashion | sports | technologynews | travel | album |
 | ------------ | ------- | ------- | ---- | ---- | ----- | ------- | -------- | ------- | ----- | -------- | ------- | ------- | ------ | -------------- | ------ | ----- |

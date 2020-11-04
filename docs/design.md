@@ -126,7 +126,7 @@ Behance 用户主页 URL 获取用户名，如 <https://www.behance.net/mishapet
 
 ### 推荐
 
-<Route author="junbaor" example="/zcool/recommend/all" path="/zcool/recommend/:type" :paramsDesc="['推荐类型,详见下面的表格']" radar="1">
+<Route author="junbaor" example="/zcool/recommend/all" path="/zcool/recommend/:type" :paramsDesc="['推荐类型,详见下面的表格']" radar="1" rssbud="1">
 
 推荐类型
 
@@ -138,7 +138,7 @@ Behance 用户主页 URL 获取用户名，如 <https://www.behance.net/mishapet
 
 ### 作品总榜单
 
-<Route author="mexunco" example="/zcool/top/design" path="/zcool/top/:type" :paramsDesc="['推荐类型,详见下面的表格']" radar="1">
+<Route author="mexunco" example="/zcool/top/design" path="/zcool/top/:type" :paramsDesc="['推荐类型,详见下面的表格']" radar="1" rssbud="1">
 
 榜单类型
 
@@ -150,12 +150,22 @@ Behance 用户主页 URL 获取用户名，如 <https://www.behance.net/mishapet
 
 ### 用户作品
 
-<Route author="junbaor" example="/zcool/user/baiyong" path="/zcool/user/:uid" :paramsDesc="['个性域名前缀或者用户ID']" radar="1">
+<Route author="junbaor" example="/zcool/user/baiyong" path="/zcool/user/:uid" :paramsDesc="['个性域名前缀或者用户ID']" radar="1" rssbud="1">
 
 例如:
 
 站酷的个人主页 `https://baiyong.zcool.com.cn` 对应 rss 路径 `/zcool/user/baiyong`
 
 站酷的个人主页 `https://www.zcool.com.cn/u/568339` 对应 rss 路径 `/zcool/user/568339`
+
+</Route>
+
+### 发现
+
+<Route author="nczitzk" example="/zcool/discovery" path="/zcool/discovery/:query?" :paramsDesc="['查询参数']" radar="1" rssbud="1">
+
+在 [发现页](https://www.zcool.com.cn/discover) 中选择查询参数后会跳转到对应搜索结果页面。此时地址栏 `https://www.zcool.com.cn/discover/` 后的字段即为查询参数。
+
+如：<https://www.zcool.com.cn/discover/0!0!0!0!0!!!!2!-1!1> 查询参数为 `0!0!0!0!0!!!!2!-1!1`
 
 </Route>
