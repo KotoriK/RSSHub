@@ -24,9 +24,7 @@
   "keywords": [
     "RSS"
   ],
-  "gitHooks": {
-    "pre-commit": "npm run format:staged"
-  },
+
   "author": "DIYgod",
   "license": "MIT",
   "bugs": {
