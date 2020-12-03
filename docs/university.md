@@ -226,7 +226,7 @@ pageClass: routes
 
 ### BTBYR 趣味盒
 
-<Route author="prnake" example="/bupt/funbox" path="/bupt/funbox" />
+<Route author="prnake" example="/bupt/funbox" path="/bupt/funbox" selfhost="1"/>
 ::: warning 注意
 
 由于需要登陆 BTBYR 后的 Cookie 值，所以只能自建，并且部署和订阅端均需支持 IPV6 网络或使用镜像站点。
@@ -439,6 +439,12 @@ xskb1 对应 <http://www.auto.uestc.edu.cn/index/xskb1.htm>
 | xyxw     | tzgg     | jwxx     | jyxx     | xgsw     |
 
 </Route>
+
+## 复旦大学继续教育学院
+
+### 成人夜大通知公告
+
+<Route author="mrbruce516" example="/fudan/cce" path="/fudan/cce" />
 
 ## 福州大学
 
@@ -843,6 +849,8 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 | -------- | -------- |
 | tt       | yw       |
 
+</Route>
+
 ### 暨南大学校园时讯
 
 <Route author="hang333" example="/jnu/xysx/yxsd" path="/jnu/xysx/:type" :paramDesc="['校园时讯类型']">
@@ -850,6 +858,8 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 | 院系速递 | 部门快讯 |
 | -------- | -------- |
 | yxsd     | bmkx     |
+
+</Route>
 
 ## 江南大学
 
@@ -1984,6 +1994,8 @@ type 列表：
 | ------ | ------ | ------ | ------ |
 | jx     | ky     | gl     | fw     |
 
+</Route>
+
 ### 教务处通知新闻
 
 <Route author="hang333" example="/ustc/jwc/info" path="/ustc/jwc/:type?" :paramsDesc="['可选，默认显示所有种类']">
@@ -1991,6 +2003,8 @@ type 列表：
 | 信息 | 教学     | 考试 | 交流     |
 | ---- | -------- | ---- | -------- |
 | info | teaching | exam | exchange |
+
+</Route>
 
 ## 中国科学院
 
