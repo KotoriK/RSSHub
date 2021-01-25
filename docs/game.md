@@ -211,6 +211,14 @@ pageClass: routes
 
 <Route author="Indexyz" example="/curseforge/files/jei" path="/curseforge/files/:project" :paramsDesc="['项目的短名或者 `Project ID`. 项目的短名可以在地址栏获取到, 例如地址为 `https://minecraft.curseforge.com/projects/non-update`, 短名就为 `non-update`. `Project ID` 可在 `Overview` 中的 `About This Project` 中找到']"/>
 
+### Feed The Beast (FTB) 模组包更新
+
+<Route author="gucheen" example="/feed-the-beast/modpack/ftb_presents_direwolf20_1_16" path="/feed-the-beast/modpack/:modpackEntry" :paramsDesc="['模组包的短名.']">
+| 参数 | 说明 |
+| ------| ------------ |
+| modpackEntry | 模组包的短名从模组包的页面链接中找到，例如 `https://www.feed-the-beast.com/modpack/ftb_presents_direwolf20_1_16`，短名就是 `ftb_presents_direwolf20_1_16`。 |
+</Route>
+
 ## Nintendo
 
 ### eShop 新发售游戏
@@ -423,22 +431,6 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 ### 国服公告
 
 <Route author="KotoriK" example="/pcr/news-cn" path="/pcr/news-cn"/>
-
-## 篝火营地
-
-### 游戏资讯
-
-<Route author="sintak" example="/gouhuo/news/switch" path="/gouhuo/news/:category" :paramsDesc="['资讯类型']">
-
-| 精选       | 海外     | 原创    | PS4 | Xboxone | PC | Switch | 掌机     | 手游       | 新闻 | 评测   | 文化    | 视频  | 音频  | 折扣     |
-| ---------- | -------- | ------- | --- | ------- | -- | ------ | -------- | ---------- | ---- | ------ | ------- | ----- | ----- | -------- |
-| choiceness | overseas | orignal | ps4 | xboxone | pc | switch | handheld | mobilegame | news | review | culture | video | audio | discount |
-
-</Route>
-
-### 游戏攻略
-
-<Route author="sintak" example="/gouhuo/strategy" path="/gouhuo/strategy"/>
 
 ## 怪物猎人世界
 

@@ -28,6 +28,16 @@ pageClass: routes
 
 </Route>
 
+### 广东省深圳市人民政府
+
+<Route author="laoxua" example="/gov/shenzhen/xxgk/zfxxgj/tzgg" path="/gov/shenzhen/xxgk/zfxxgj/:caty" :paramsDesc="['信息类别']">
+
+| 通知公告 | 政府采购 | 资金信息 | 重大项目 |
+| :------: | :------: | :------: | :------: |
+|   tzgg   |   zfcg   |   zjxx   |   zdxm   |
+
+</Route>
+
 ## 国家税务总局
 
 ### 最新文件
@@ -184,6 +194,18 @@ pageClass: routes
 ### 最新通知
 
 <Route author="Yoge-Code" example="/gov/cnca/zxtz" path="/gov/cnca/zxtz"/>
+
+## 中国农工民主党
+
+### 新闻中心
+
+<Route author="nczitzk" example="/ngd" path="/ngd/:slug?" :paramsDesc="['见下文']">
+
+将目标栏目的网址拆解为 `http://www.ngd.org.cn/` 和后面的字段，去掉 `.htm` 后，把后面的字段中的 `/` 替换为 `-`，即为该路由的 slug
+
+如：(要闻动态)[http://www.ngd.org.cn/xwzx/ywdt/index.htm] 的网址在 `http://www.ngd.org.cn/` 后的字段是 `xwzx/ywdt/index.htm`，则对应的 slug 为 `xwzx-ywdt-index`，对应的路由即为 `/ngd/xwzx-ywdt-index`
+
+</Route>
 
 ## 中国人大网
 

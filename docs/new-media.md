@@ -122,6 +122,10 @@ pageClass: routes
 
 ## CGTN
 
+### Opinions
+
+<Route author="nczitzk" example="/cgtn/opinions" path="/cgtn/opinions"/>
+
 ### Most Read & Most Share
 
 <Route author="nczitzk" example="/cgtn/most/read/day" path="/cgtn/most/:type?/:time?" :paramsDesc="['类型，`read` 指最多阅读，`share` 指最多分享，默认为 `read`', '时间，`all` 指所有时间，`day` 指今天，`week` 指本周，`month` 指本月，`year` 指今年，默认为 `all`']"/>
@@ -129,6 +133,10 @@ pageClass: routes
 ### Top News
 
 <Route author="nczitzk" example="/cgtn/top" path="/cgtn/top"/>
+
+### Editors' Pick
+
+<Route author="nczitzk" example="/cgtn/pick" path="/cgtn/pick"/>
 
 ## cnBeta
 
@@ -427,7 +435,7 @@ IPFS 网关有可能失效，那时候换成其他网关。
 
 ### 首页
 
-<Route author="EsuRt" example="/mittrchina/article" path="/mittrchina"/>
+<Route author="EsuRt queensferryme" example="/mittrchina/hot" path="/mittrchina/:type" :paramsDesc="['类型 type，可以是 index（首页资讯）或 hot（本周热榜）']"/>
 
 ## Nautilus
 
@@ -563,11 +571,25 @@ IPFS 网关有可能失效，那时候换成其他网关。
 
 </Route>
 
+## Thrillist
+
+<Route author="loganrockmore" example="/thrillist/food-and-drink" path="/vulture/:tag" :paramsDesc="['Tag']">
+
+Provides all of the Thrillist articles with the specified tag.
+
+</Route>
+
 ## TOPYS
 
 ### 分类
 
 <Route author="kt286" example="/topys/7" path="/topys/:category" :paramsDesc="['分类ID，可在对应页面的 URL 中找到']"/>
+
+## VOA News
+
+### Day in Photos
+
+<Route author="nczitzk" example="/voa/day-photos" path="/voa/day-photos"/>
 
 ## Vulture
 
@@ -670,6 +692,18 @@ Supported sub-sites:
 
 <Route author="nwindz" example="/hinatazaka46/blog" path="/hinatazaka46/blog" />
 
+## 半月谈
+
+### 时事大事库
+
+<Route author="nczitzk" example="/banyuetan/byt" path="/banyuetan/byt/:time?" :paramsDesc="['时间，见下表，默认为每周']">
+
+| 每周          | 每月  |
+| ------------- | ----- |
+| shishidashiku | yiyue |
+
+</Route>
+
 ## 報導者
 
 ### 最新
@@ -748,6 +782,30 @@ Supported sub-sites:
 
 </Route>
 
+## 城农 Growin' City
+
+### 城农资讯观点
+
+<Route author="nczitzk" example="/growincity/news" path="/growincity/news/:id?" anticrawler="1" :paramsDesc="['分类 id，见下表，默认为原创内容']">
+
+| 原创内容 | 商业投资 | 观点评论 | 农业科技 |
+| -------- | -------- | -------- | -------- |
+| 48       | 55       | 88       | 98       |
+
+| 农艺管理 | 农业机械 | 设施农业 | 畜牧水产 |
+| -------- | -------- | -------- | -------- |
+| 101      | 83       | 85       | 87       |
+
+| 食品科技 | 科技产品 | 食品创新 | 研究报告 |
+| -------- | -------- | -------- | -------- |
+| 86       | 100      | 99       | 76       |
+
+| 教育拓展 | 展会培训 | 业界访谈 |
+| -------- | -------- | -------- |
+| 61       | 77       | 72       |
+
+</Route>
+
 ## 抽屉新热榜
 
 ### 最新
@@ -813,6 +871,28 @@ area 分区选项
 ### 电商在线
 
 <Route author="LogicJake" example="/imaijia/category/xls" path="/imaijia/category/:category" :paramsDesc="['类别id，可在 URL 中找到']" />
+
+## 丁香园
+
+### 新冠疫苗实时动态
+
+<Route author="nczitzk" example="/dxy/vaccine/北京" path="/dxy/vaccine/:province?/:city?/:location?" :paramsDesc="['省', '市', '区']">
+
+查看北京市的新冠疫苗接种点，路由为 `/dxy/vaccine/北京`；
+
+查看北京市朝阳区的新冠疫苗接种点，路由为 `/dxy/vaccine/北京/北京/朝阳区`；
+
+查看湖北省武汉市的新冠疫苗接种点，路由为 `/dxy/vaccine/湖北/武汉`；
+
+查看湖北省武汉市武昌区的新冠疫苗接种点，路由为 `/dxy/vaccine/湖北/武汉/武昌区`。
+
+::: tip 提示
+
+若参数为空，则返回全国所有新冠疫苗接种点。
+
+:::
+
+</Route>
 
 ## 懂球帝
 
@@ -1339,12 +1419,66 @@ column 为 third 时可选的 category:
 ### 首页
 
 <Route author="xyqfer" example="/laosiji/feed" path="/laosiji/feed"/>
-### 24小时热门
+
+### 24 小时热门
 
 <Route author="xyqfer" example="/laosiji/hot" path="/laosiji/hot"/>
+
 ### 节目
 
 <Route author="xyqfer" example="/laosiji/hotshow/128" path="/laosiji/hotshow/:id" :paramsDesc="['节目 id']"/>
+
+## 留园网
+
+### 分站
+
+<Route author="nczitzk" example="/6park" path="/6park/:id?" :paramsDesc="['分站，见下表，默认为史海钩沉']">
+
+| 婚姻家庭 | 魅力时尚 | 女性频道 | 生活百态 | 美食厨房 | 非常影音 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| life9    | life1    | chan10   | life2    | life6    | fr       |
+
+| 车迷沙龙 | 游戏天地 | 卡通漫画 | 体坛纵横 | 运动健身 | 电脑前线 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| enter7   | enter3   | enter6   | enter5   | sport    | know1    |
+
+| 数码家电 | 旅游风向 | 摄影部落 | 奇珍异宝 | 笑口常开 | 娱乐八卦 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| chan6    | life7    | chan8    | page     | enter1   | enter8   |
+
+| 吃喝玩乐 | 文化长廊 | 军事纵横 | 百家论坛 | 科技频道 | 爱子情怀 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| netstar  | life10   | nz       | other    | chan2    | chan5    |
+
+| 健康人生 | 博论天下 | 史海钩沉 | 网际谈兵 | 经济观察 | 谈股论金 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| life5    | bolun    | chan1    | military | finance  | chan4    |
+
+| 杂论闲侃 | 唯美乐园 | 学习园地 | 命理玄机 | 宠物情缘 | 网络歌坛 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| pk       | gz1      | gz2      | gz3      | life8    | chan7    |
+
+| 音乐殿堂 | 情感世界 |
+| -------- | -------- |
+| enter4   | life3    |
+
+::: tip 提示
+
+酷 18 文档参见 [此处](https://docs.rsshub.app/picture.html#ku-18)
+
+禁忌书屋文档参见 [此处](https://docs.rsshub.app/reading.html#jin-ji-shu-wu)
+
+:::
+
+</Route>
+
+### 精华区
+
+<Route author="nczitzk" example="/6park/chan1/gold" path="/6park/:id/gold" :paramsDesc="['分站，见上表']"/>
+
+### 搜索关键字
+
+<Route author="nczitzk" example="/6park/chan1/keywords/都市" path="/6park/:id/keywords/:keyword?" :paramsDesc="['分站，见上表', '关键字']"/>
 
 ## 妈咪帮
 
@@ -1369,6 +1503,12 @@ column 为 third 时可选的 category:
 | 1    | 2    | 3    |
 
 </Route>
+
+## 美国半导体行业协会
+
+### 新闻
+
+<Route author="nczitzk" example="/semiconductors/latest-news" path="/semiconductors/latest-news"/>
 
 ## 美国大学和雇主协会
 
@@ -1681,6 +1821,18 @@ column 为 third 时可选的 category:
 
 <Route author="LogicJake" example="/tencent/news/author/5933889" path="/tencent/news/author/:mid" :paramsDesc="['企鹅号 ID']"/>
 
+## 通識・現代中國
+
+### 議題熱話
+
+<Route author="nczitzk" example="/chiculture/topic" path="/chiculture/topic/:category?" :paramsDesc="['分类，见下表，默认为全部']">
+
+| 全部 | 現代中國 | 今日香港 | 全球化 | 一周時事通識 |
+| ---- | -------- | -------- | ------ | ------------ |
+|      | 76       | 479      | 480    | 379          |
+
+</Route>
+
 ## 推酷
 
 ### 周刊
@@ -1745,6 +1897,11 @@ column 为 third 时可选的 category:
 
 </Route>
 
+## 网易号（通用）
+
+优先使用方法一，若是网易号搜索页面搜不到的小众网易号（文章页面不含`data-wemediaid`）则可使用此法。
+<Route author="mjysci" example="netease/dy2/T1555591616739" path="/netease/dy2/:id" :paramsDesc="['id，该网易号主页网址最后一项html的文件名']"/> 
+
 ## 网易新闻
 
 ### 排行榜
@@ -1778,10 +1935,6 @@ column 为 third 时可选的 category:
 | 1        | 2    | 3    | 4        | 5        | 6    | 7    | 8      | 9      | 10   | 11       | 12     | 13       | 14   | 15   |
 
 </Route>
-
-### 数读
-
-<Route author="laampui" example="/netease/news/data" path="/netease/news/data"/>
 
 ## 维基百科
 
@@ -2028,6 +2181,22 @@ column 为 third 时可选的 category:
 
 <Route author="nczitzk" example="/interesting-sky/recent-interesting" path="/interesting-sky/recent-interesting"/>
 
+## 游戏葡萄
+
+无文章正文，仅有目录索引。
+
+### 全部文章
+
+<Route author="KotoriK" example="/gamegrape" path="/gamegrape/index"/>
+
+### 分类
+
+例子对应[深度分类](http://youxiputao.com/article/index/id/13)
+<Route author="KotoriK" example="/gamegrape/13" path="/gamegrape/:id?"/>
+
+## 鱼塘热榜
+
+<Route author="TheresaQWQ" example="/mofish/2" path="/mofish/:id" :paramsDesc="['分类id，可以在 https://api.tophub.fun/GetAllType 获取']" />
 ## 遠見
 
 <Route author="laampui" example="/gvm/index/health" path="/gvm/index/:category?" :paramsDesc="['見下表, 默認爲 newest']">
@@ -2086,6 +2255,18 @@ column 为 third 时可选的 category:
 
 <Route author="nczitzk" example="/clb/commentary" path="/clb/commentary/:lang?" :paramsDesc="['语言，默认为简体中文，可选 `en` 即英文']"/>
 
+## 眾新聞
+
+### 眾聞
+
+<Route author="nczitzk" example="/hkcnews/news" path="/hkcnews/news/:category?" :paramsDesc="['分类，见下表，默认为全部']">
+
+| 全部 | 經濟 | 社會 | 生活 | 政治 | 國際 | 台灣 | 人物 | 中國 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|      | 13   | 15   | 14   | 12   | 16   | 20   | 21   | 19   |
+
+</Route>
+
 ## 装备前线
 
 ### 首页最新帖子
@@ -2109,13 +2290,3 @@ QueryString:
 ### 全文
 
 <Route author="HenryQW" example="/zzz" path="/zzz/index"/>
-
-## 游戏葡萄
-无文章正文，仅有目录索引。
-### 全部文章
-
-<Route author="KotoriK" example="/gamegrape" path="/gamegrape/index"/>
-
-### 分类
-例子对应[深度分类](http://youxiputao.com/article/index/id/13)
-<Route author="KotoriK" example="/gamegrape/13" path="/gamegrape/:id?"/>

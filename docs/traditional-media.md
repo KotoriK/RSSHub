@@ -34,7 +34,7 @@ pageClass: routes
 
 ### BBC 英文
 
-<Route author="HenryQW" example="/bbc/world-asia" path="/bbc/:channel" :paramsDesc="['频道，缺省为热门']">
+<Route author="HenryQW DIYgod" example="/bbc/world-asia" path="/bbc/:channel" :paramsDesc="['频道，缺省为热门']">
 
 通过提取文章全文，以提供比官方源更佳的阅读体验。
 
@@ -181,6 +181,23 @@ pageClass: routes
 
 <Route author="oppliate" example="/phoronix/news_topic/Intel" path="/phoronix/:page/:queryOrItem?" :paramsDesc="['页面', '对 `category` 页面是分类项目 `item`，对其它页面是主题 `q`，可以在网站顶部导航栏各项目链接里找出。如 `https://www.phoronix.com/scan.php?page=category&item=Computers` 对应 `/phoronix/category/Computers`']" />
 
+## RTHK 傳媒透視
+
+<Route author="tpnonthealps" example="/mediadigest/latest" path="/mediadigest/:range" :paramsDesc="['时间范围']">
+
+细则: 
+
+-   `:range` 时间范围参数  
+    (可为 `latest` 或 `四位数字的年份`)
+
+    -   `latest`: 最新的 50 篇文章
+    -   `2020`: 2020 年的所有文章
+
+-   全文输出转换为简体字: `?opencc=t2s`  
+    (`opencc` 是 RSSHub 的通用参数，详情请参阅 [「中文简繁体转换」](https://docs.rsshub.app/parameter.html#zhong-wen-jian-fan-ti-zhuan-huan))
+
+</Route>
+
 ## Solidot
 
 ### 最新消息
@@ -205,7 +222,7 @@ Solidot 提供的 feed:
 
 ### News
 
-<Route author="nczitzk" example="/telecompaper/news/mobile/2020/China/News" path="/telecompaper/news/:caty/:year?/:country?/:type?/:keyword?" :paramsDesc="['分类，见下表', '年份，可在所选分类页中 Filter 的 `Years` 选择器中选择相应年份，不限年份则填入 `all`，默认为不限', '国家或大洲，可在所选分类页中 Filter 的 `Countries` 选择器中选择相应国家或大洲，不限国家或大洲则填入 `all`，默认为不限', '类型，可在所选分类页中 Filter 的 `Types` 选择器中选择相应类型，不限类型则填入 `all`，默认为不限', '搜索关键字']">
+<Route author="nczitzk" example="/telecompaper/news/mobile/2020/China/News" path="/telecompaper/news/:caty/:year?/:country?/:type?" :paramsDesc="['分类，见下表', '年份，可在所选分类页中 Filter 的 `Years` 选择器中选择相应年份，不限年份则填入 `all`，默认为不限', '国家或大洲，可在所选分类页中 Filter 的 `Countries` 选择器中选择相应国家或大洲，不限国家或大洲则填入 `all`，默认为不限', '类型，可在所选分类页中 Filter 的 `Types` 选择器中选择相应类型，不限类型则填入 `all`，默认为不限']">
 
 可选分类如下
 
@@ -220,6 +237,24 @@ Solidot 提供的 feed:
 [INDUSTRY RESOURCES](https://www.telecompaper.com/industry-resources) 分类页的 Filter 仅提供了 `Content Type` 选择器，对应路由中 `type` 参数。`year` 和 `country` 参数则对该分类无效。
 
 :::
+
+</Route>
+
+### Search
+
+<Route author="nczitzk" example="/telecompaper/search/Nokia" path="/telecompaper/search/:keyword?/:company?/:sort?/:period?" :paramsDesc="['关键词', '公司名，默认为不限', '排序，见下表，默认为 Date Descending', '发表在时间段内，默认为 12 months']">
+
+排序
+
+| Date Ascending | Date Descending |
+| -------------- | --------------- |
+| 1              | 2               |
+
+发表在时间段内
+
+| 1 month | 3 months | 6 months | 12 months | 24 months |
+| ------- | -------- | -------- | --------- | --------- |
+| 1       | 3        | 6        | 12        | 24        |
 
 </Route>
 
@@ -247,6 +282,26 @@ Solidot 提供的 feed:
 
 <Route author="emdoe" example="/udn/global/鏡頭背後" path="/udn/global/:tid" :paramsDesc="['標籤名稱，請在轉角國際首頁獲取；如果選擇輸入 `newest` 則輸出最新文章']">
 
+## Voice of America (VOA)
+
+透過提取全文，以獲得更好的閱讀體驗
+
+<Route author="zphw" example="/voa/cantonese/zprtie-ttp" path="/voa/:language/:channel?" :paramsDesc="['語言','頻道，可於官網獲取']">
+
+`语言`
+
+| 粵語      | 中文    | 藏語    |
+| --------- | ------- | ------- |
+| cantonese | chinese | tibetan |
+
+`频道`
+
+可於各語言官網聚合新聞處 (如 <https://www.voacantonese.com/rssfeeds>) 獲取
+
+例如 `https://www.voacantonese.com/api/zyrtyequty` 將對應 `/voa/cantonese/zyrtyequty`
+
+</Route>
+
 ## Yahoo
 
 ### 新聞
@@ -264,6 +319,16 @@ Solidot 提供的 feed:
 | 新聞總集 | 兩岸國際 | 財經     | 娛樂          | 體育   | 健康   |
 | -------- | -------- | -------- | ------------- | ------ | ------ |
 | （空）   | world    | business | entertainment | sports | health |
+
+</Route>
+
+## Yahoo! by Author
+
+### 新聞
+
+<Route author="loganrockmore" example="/yahoo-author/hannah-keyser" path="/yahoo-news/:author" :paramsDesc="['Author']">
+
+Provides all of the articles by the specified Yahoo! author.
 
 </Route>
 
@@ -965,3 +1030,15 @@ category 对应的关键词有
 ### 九江新闻
 
 <Route author="jjlzg" example="/fjnews/jjnews" path="/fjnews/jjnews"/>
+
+## 自由亚洲电台
+
+<Route author="zphw" example="/rfa/mandarin" path="/rfa/:language?/:channel?/:subChannel?" :paramsDesc="['语言，默认 English', '频道', '子频道（如存在）']" />
+
+通过指定频道参数，提供比官方源更佳的阅读体验。
+
+参数均可在官网获取，如：
+
+`https://www.rfa.org/cantonese/news` 对应 `/rfa/cantonese/news`
+
+`https://www.rfa.org/cantonese/news/htm` 对应 `/rfa/cantonese/news/htm`

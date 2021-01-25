@@ -34,7 +34,7 @@ pageClass: routes
 
 ### TheBatch 周报
 
-<Route author="nczitzk" example="/deeplearning/thebatch" path="/deeplearning/thebatch"/>
+<Route author="nczitzk" example="/deeplearningai/thebatch" path="/deeplearningai/thebatch"/>
 
 ## Dockone
 
@@ -665,16 +665,17 @@ GitHub 官方也提供了一些 RSS:
 
 <Route author="tonghs" example="/manong-weekly" path="/manong-weekly" />
 
+## 美团开放平台
+
+### 美团开放平台公告
+
+<Route author="youzipi" example="/meituan/open/announce" path="/meituan/open/announce"/>
+
 ## 平安银河实验室
 
 ### posts
 
 <Route author="hellodword" example="/galaxylab" path="/galaxylab">
-</Route>
-
-## 前端技术文章
-
-<Route author="laampui" example="/front-end-rss" path="/front-end-rss" :paramsDesc="['分类']">
 </Route>
 
 ## 前端艺术家 && 飞冰早报
