@@ -28,7 +28,8 @@ pageClass: routes
 
 ### 话题
 
-<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']" radar="1" rssbud="1"/>
+<Route author="mjysci" example="/apnews/topics2/ap-top-news" path="/apnews/topics2/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']"  anticrawler="1"/>
+采用了`puppeteer`规避`Project Shield`，无全文抓取，建议自建。  
 
 ## BBC
 
@@ -714,6 +715,10 @@ category 对应的关键词有
 ### 习近平系列重要讲话
 
 <Route author="LogicJake"  example="/people/xjpjh" path="/people/xjpjh/:keyword?/:year?" :paramsDesc="['关键词，默认不填','年份，默认 all']"/>
+
+### 中国共产党新闻网 24 小时滚动新闻
+
+<Route author="nczitzk" example="/people/cpc/24h" path="/people/cpc/24h"/>
 
 ## 人民日报社 国际金融报
 
