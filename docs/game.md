@@ -530,6 +530,12 @@ Example：`https://www.iyingdi.com/tz/people/55547` ，id 是 `55547`
 
 </Route>
 
+## 世界计划 多彩舞台 ｜ ProjectSekai ｜ プロセカ
+
+### 公告
+
+<Route author="15x15G" example="/pjsk/news" path="/pjsk/news"/>
+
 ## 王者荣耀
 
 ### 新闻中心
@@ -633,6 +639,16 @@ Example：`https://www.iyingdi.com/tz/people/55547` ，id 是 `55547`
 <Route author="DIYgod" example="/vgtime/keyword/怪物猎人" path="/vgtime/keyword/:keyword" radar="1" rssbud="1"/>
 
 ## 游讯网
+
+### 资讯
+
+<Route author="nczitzk" example="/yxdown/news" path="/yxdown/news/:category?" :paramsDesc="['分类，见下表，默认为资讯首页']">
+
+| 资讯首页 | 业界动态 | 视频预告 | 新作发布 | 游戏资讯 | 游戏评测 | 网络游戏 | 手机游戏 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+|          | dongtai  | yugao    | xinzuo   | zixun    | pingce   | wangluo  | shouyou  |
+
+</Route>
 
 ### 精彩推荐
 

@@ -303,9 +303,40 @@ pageClass: routes
 
 ## 重庆大学
 
-### 教务网通知公告
+### 本科教学信息网通知公告
 
-<Route author="El-Chiang" example="/cqu/jwc/announcement" path="/cqu/jwc/announcement"/>
+<Route author="El-Chiang Hagb" example="/cqu/jwc/" path="/cqu/jwc/:path*" :paramsDesc="['路径']">
+
+| 分类                                                              | 路径                |
+| ----------------------------------------------------------------- | ------------------- |
+| [通知公告](http://jwc.cqu.edu.cn/index/tzgg.htm)                  | `index/tzgg` 或留空 |
+| [通知公告 / 学籍管理](http://jwc.cqu.edu.cn/index/tzgg/xjgl.htm)  | `index/tzgg/xjgl`   |
+| [通知公告 / 交流交换](http://jwc.cqu.edu.cn/index/tzgg/jljh1.htm) | `index/tzgg/jljh1`  |
+| [通知公告 / 教学运行](http://jwc.cqu.edu.cn/index/tzgg/jxyx.htm)  | `index/tzgg/jxyx`   |
+| [通知公告 / 教学质量](http://jwc.cqu.edu.cn/index/tzgg/jxzl.htm)  | `index/tzgg/jxzl`   |
+| [通知公告 / 教研教改](http://jwc.cqu.edu.cn/index/tzgg/jyjg.htm)  | `index/tzgg/jyjg`   |
+| [通知公告 / 创新实践](http://jwc.cqu.edu.cn/index/tzgg/cxsj.htm)  | `index/tzgg/cxsj`   |
+| [学籍管理 / 学籍处理](http://jwc.cqu.edu.cn/xjgl/xjcl.htm)        | `xjgl/xjcl`         |
+| [学籍管理 / 交流交换](http://jwc.cqu.edu.cn/xjgl/jljh.htm)        | `xjgl/jljh`         |
+| [学籍管理 / 学生推免](http://jwc.cqu.edu.cn/xjgl/xstm.htm)        | `xjgl/xstm`         |
+| [学籍管理 / 转专业](http://jwc.cqu.edu.cn/xjgl/zzy.htm)           | `xjgl/zzy`          |
+| [教学运行 / 学生选课](http://jwc.cqu.edu.cn/jxyx/xsxk.htm)        | `jxyx/xsxk`         |
+| [教学运行 / 考试安排](http://jwc.cqu.edu.cn/jxyx/ksap.htm)        | `jxyx/ksap`         |
+| [教学运行 / 助教管理](http://jwc.cqu.edu.cn/jxyx/zjgl.htm)        | `jxyx/zjgl`         |
+
+</Route>
+
+::: tip 提示
+路径参数的值为相应通知列表页面的地址去除后缀名和域名后的路径。
+
+例如 “通知公告” 列表页面地址为 <http://jwc.cqu.edu.cn/index/tzgg.htm>，相应参数为 `index/tgzz`。
+:::
+
+::: warning 注意
+原重庆大学教务网网站变更为重庆大学本科教学信息网。该路由编写时（2021-07-29）它[正处于试运行阶段](http://jwc.cqu.edu.cn/info/1080/3482.htm)。
+
+通知的分类比较迷，请小心甄别、使用（以免漏掉需要的通知）。
+:::
 
 ### 新闻网讲座预告
 
@@ -817,7 +848,7 @@ category 列表：
 
 ### 哈尔滨工业大学（深圳） - 新闻中心
 
-<Route author="yx1302317313" example="/hitsz/article/id-74" path="/hitsz/article/:category?" :paramsDesc="['分类名，默认为通知公告']" >
+<Route author="xandery-geek" example="/hitsz/article/id-74" path="/hitsz/article/:category?" :paramsDesc="['分类名，默认为通知公告']" >
 
 | 校区要闻 | 媒体报道 | 通知公告 | 综合新闻 | 校园动态 | 讲座论坛 | 热点专题 |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -972,6 +1003,14 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 ### 土木与交通学院 - 学工通知
 
 <Route author="railzy" example="/scut/scet/notice" path="/scut/scet/notice" />
+
+### 电子与信息学院 - 新闻速递
+
+<Route author="auto-bot-ty" example="/scut/seie/news_center" path="/scut/seie/news_center" />
+
+::: warning 注意
+由于学院官网对非大陆 IP 的访问存在限制，需自行部署。
+:::
 
 ## 华南师范大学
 
@@ -1486,7 +1525,7 @@ type 列表：
 
 ### 清华大学招聘信息
 
-<Route author="Halcao" example="/thu/career" path="/thu/career" />
+<Route author="Halcao DylanXie123" example="/thu/career" path="/thu/career" />
 
 ## 山东大学
 
@@ -1802,6 +1841,12 @@ type 列表：
 
  </Route>
 
+## 温州大学
+
+### 新闻
+
+<Route author="Chandler-Lu" example="/wzu/news" path="/wzu/news" />
+
 ## 温州商学院
 
 ### 温州商学院
@@ -1922,6 +1967,20 @@ type 列表：
 
 <Route author="nczitzk" example="/xjtu/gs/tzgg" path="/xjtu/gs/tzgg" />
 
+### 就业创业中心
+
+<Route author="DylanXie123" example="/xjtu/job/xdsgwy" path="/xjtu/job/:subpath?" :paramsDesc="['栏目类型，默认请求`zxtg`，详见下方表格']"  />
+
+栏目类型
+
+| 中心通告 | 选调生及公务员 | 国际组织实习 | 新闻资讯 | 活动与讲座 |
+| -------- | -------------- | ------------ | -------- | ---------- |
+| zxtg     | xdsgwy         | gjzzsx       | xwzx     | hdyjz      |
+
+### 电气学院
+
+<Route author="DylanXie123" example="/xjtu/ee/1114" path="/xjtu/job/:id?" :paramsDesc="['栏目id，默认请求`1114`，可在 URL 中找到']"  />
+
 ## 西北工业大学
 
 ### 翱翔门户
@@ -1935,6 +1994,44 @@ type 列表：
 | 10000    | 10001    | 10002    | 10003    | 10004        | 10005    | 10006    | 10007    | 10008    |
 
 </Route>
+
+## 西北农林科技大学
+
+### 校园要闻
+
+<Route author="dingyx99" example="/nwafu/news" path="/nwafu/news" />
+
+### 教务公告
+
+<Route author="dingyx99" example="/nwafu/jiaowu" path="/nwafu/jiaowu" />
+
+### 后勤公告
+
+<Route author="dingyx99" example="/nwafu/gs" path="/nwafu/gs" />
+
+### 图书馆公告
+
+<Route author="dingyx99" example="/nwafu/lib" path="/nwafu/lib" />
+
+### 网教中心公告
+
+<Route author="dingyx99" example="/nwafu/nic" path="/nwafu/nic" />
+
+### 团委公告
+
+<Route author="dingyx99" example="/nwafu/54youth" path="/nwafu/54youth" />
+
+### 计财处公告
+
+<Route author="dingyx99" example="/nwafu/jcc" path="/nwafu/jcc" />
+
+### 研究生院公告
+
+<Route author="dingyx99" example="/nwafu/yjshy" path="/nwafu/yjshy" />
+
+### 信息工程学院公告
+
+<Route author="dingyx99" example="/nwafu/cie" path="/nwafu/cie" />
 
 ## 西南财经大学
 
