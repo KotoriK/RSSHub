@@ -51,6 +51,23 @@ pageClass: routes
 ### 标签
 
 <Route author="KotoriK" example="/8kcos/tag/cosplay"  path="/8kcos/tag/:tag" :paramsDesc="['标签名']"/>
+## Asian to lick
+
+### 首页
+
+<Route author="nczitzk" example="/asiantolick" path="/asiantolick"/>
+
+### 分类
+
+<Route author="nczitzk" example="/asiantolick/category/90" path="/asiantolick/category/:category?" :paramsDesc="['分类，可在对应分类页 URL 中找到分类编号，默认为首页']"/>
+
+### 标签
+
+<Route author="nczitzk" example="/asiantolick/tag/90" path="/asiantolick/tag/:tag?" :paramsDesc="['标签，可在对应标签页 URL 中找到标签编号，默认为首页']"/>
+
+### 搜索
+
+<Route author="nczitzk" example="/asiantolick/search/lolita" path="/asiantolick/search/:keyword?" :paramsDesc="['关键词，默认为空']"/>
 
 ## BabeHub
 
@@ -259,11 +276,12 @@ R18 显示
 
 ### 最新
 
-<Route author="KotoriK" example="/micmicidol" path="/micmicidol">
+<Route author="KotoriK" example="/micmicidol" path="/micmicidol"/>
 
 ### 标签
 
-<Route author="KotoriK" example="/micmicidol/search/Young%20Jump/20" path="/micmicidol/search/:label/:max?" :paramsDesc="['标签名','最多返回多少条结果']">
+<Route author="KotoriK" example="/micmicidol/search/Young%20Jump?limit=50" path="/micmicidol/search/:label" :paramsDesc="['标签名']"/>
+获取数量可以通过 [limit](https://docs.rsshub.app/parameter.html#tiao-shu-xian-zhi) 参数控制。默认值为`50`。
 
 ## MM 范
 
