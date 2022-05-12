@@ -158,7 +158,7 @@ pageClass: routes
 
 ## A 姐分享
 
-<Route author="zhenhappy" example="/abskoop" path="/abskoop"/>
+<Route author="zhenhappy" example="/abskoop/nsfw" path="/abskoop/:type?" :paramsDesc="['为空, 订阅主站点, `nsfw`订阅nsfw子站点']">
 
 ## AcFun
 
@@ -302,6 +302,16 @@ BT 之家的域名会变更，本路由以 <https://www.btbtt20.com> 为默认�
 | TOPC1451528971114112 | TOPC1451559180488841 | TOPC1451551777876756 |
 
 </Route>
+
+## Coomer
+
+### Artist
+
+<Route author="nczitzk" example="/coomer/artist/belledelphine" path="/coomer/artist/:id" :paramsDesc="['Artist id，可在对应页面中找到']"/>
+
+### Recent Posts
+
+<Route author="nczitzk" example="/coomer/posts" path="/coomer/posts"/>
 
 ## E-Hentai
 
@@ -1172,6 +1182,10 @@ JavDB 有多个备用域名，本路由默认使用永久域名 <https://javdb.c
 
 <Route author="imgss" example="/dytt" path="/dytt" supportBT="1"/>
 
+## 抖音
+
+见 [#抖音](/social-media.html#dou-yin)
+
 ## 法国国际广播电台
 
 ### 滚动新闻
@@ -1248,7 +1262,17 @@ JavDB 有多个备用域名，本路由默认使用永久域名 <https://javdb.c
 
 ### 最新资源
 
-<Route author="greatcodeeer" example="/pianyuan" path="/pianyuan" radar="1" rssbud="1"/>
+<Route author="greatcodeeer jerry1119" example="/pianyuan/index" path="/pianyuan/index/:media?" :paramsDesc="['类别，见下表，默认为首页']" radar="1" rssbud="1" selfhost="1"/>
+
+| 电影 | 剧集 |
+| -- | -- |
+| mv | tv |
+
+### 搜索
+
+<Route author="jerry1119" example="/pianyuan/indexers/pianyuan/results/search/api?t=test&q=长津湖" path="/pianyuan/indexers/pianyuan/results/search/" selfhost="1"/>
+
+搜索路由模仿 jackett 的搜索 api, 以提供给 nastools 使用，填写在 nastools 配置 indexer 中
 
 ## 飘花电影网
 
@@ -1276,13 +1300,19 @@ JavDB 有多个备用域名，本路由默认使用永久域名 <https://javdb.c
 
 ## 人人影视
 
-### 评测推荐
+### 影视资讯
 
-<Route author="wb121017405" example="/rrys/review" path="/rrys/review" />
+<Route author="wb121017405" example="/yyets/article" path="/yyets/article/:type?" paramsDesc="['分类，见下表，默认为全部']" radar="1" rssbud="1">
 
-### 今日更新
+| 全部 | 影视资讯 | 收视快报   | 人人影评     | 人人剧评     | 新剧评测       | 片单推荐  |
+| -- | ---- | ------ | -------- | -------- | ---------- | ----- |
+|    | news | report | m_review | t_review | new_review | recom |
 
-<Route author="alcarl" example="/yyets/todayfilelist" path="/yyets/todayfilelist" />
+</Route>
+
+### 今日播出
+
+<Route author="bao1991213" example="/yyets/today" path="/yyets/today" radar="1" rssbud="1"/>
 
 ## 色花堂中文论坛
 
@@ -1441,6 +1471,12 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 <Route author="xyqfer Fatpandac" example="/youku/channel/UNTg3MTM3OTcy" path="/youku/channel/:channelId/:embed?" :paramsDesc="['频道 id', '默认为开启内嵌视频, 任意值为关闭']"/>
 
+## 云听
+
+### 电台节目
+
+<Route author="kt286 nczitzk" example="/radio/1552135" path="/radio/:id" :paramsDesc="['节目ID，可在对应专辑页面的 URL 中找到']" supportPodcast="1"/>
+
 ## 中国高清网
 
 ### 电影
@@ -1450,12 +1486,6 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 | 全部 | 蓝光     | 1080P | 720P | 3D | WEB-DL |
 | -- | ------ | ----- | ---- | -- | ------ |
 | 留空 | bluray | 1080p | 720p | 3d | webdl  |
-
-## 中国广播
-
-### 电台节目
-
-<Route author="kt286" example="/radio/2/520767" path="/radio/:channelname/:name" :paramsDesc="['频道ID, 可在对应专辑页面的 URL 中找到','节目ID，可在对应专辑页面的 URL 中找到']" supportPodcast="1"/>
 
 ## 注视影视
 
